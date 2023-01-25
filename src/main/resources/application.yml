@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}?useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    password: ${DB_PASSWORD}
+    username: ${DB_USER}
+    driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     generate-ddl: 'false'
     database: mysql
@@ -13,8 +18,3 @@ spring:
         enable_lazy_load_no_trans: 'true'
         format_sql: 'true'
     database-platform: org.hibernate.dialect.MySQL8Dialect
-  datasource:
-    password: ${DB_PASSWORD}
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: ${DB_USER}
-    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}?useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
