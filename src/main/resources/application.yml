@@ -18,3 +18,7 @@ spring:
         enable_lazy_load_no_trans: 'true'
         format_sql: 'true'
     database-platform: org.hibernate.dialect.MariaDB103Dialect
+
+jwt:
+  accessSecret: ${ACCESS_SECRET}
+  refreshSecret: ${REFRESH_SECRET}

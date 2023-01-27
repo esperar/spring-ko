@@ -1,4 +1,4 @@
-package esperer.kopring.domain.member.domain.exception
+package esperer.kopring.domain.member.exception
 
 import esperer.kopring.global.error.ErrorCode
 import esperer.kopring.global.error.exception.BusinessException
