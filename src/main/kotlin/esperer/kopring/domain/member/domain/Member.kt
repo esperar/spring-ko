@@ -24,7 +24,6 @@ class Member(
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "role", joinColumns = [JoinColumn(name = "id")])
     val roles: MutableList<Role> = mutableListOf(),
-
     @Enumerated(EnumType.STRING)
     val state: UserStatus,
 ) {
