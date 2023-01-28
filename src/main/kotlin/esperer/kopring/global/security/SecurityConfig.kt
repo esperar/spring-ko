@@ -53,12 +53,6 @@ class SecurityConfig(
             .mvcMatchers(HttpMethod.GET, "/email/authentication").permitAll()
             .mvcMatchers(HttpMethod.GET, "/email").permitAll()
 
-            // Client
-            .mvcMatchers(HttpMethod.GET, "/client").authenticated()
-            .mvcMatchers(HttpMethod.POST, "/client").authenticated()
-            .mvcMatchers(HttpMethod.GET, "/client/{id}").authenticated()
-            .mvcMatchers(HttpMethod.PATCH, "/client/{id}").authenticated()
-
             // Admin
             .mvcMatchers("/admin/**").hasRole("ADMIN")
 
