@@ -5,5 +5,5 @@ import esperer.kopring.domain.member.domain.Member
 
 interface MemberUtil {
     fun currentMember(): Member
-    fun findMemberById(memberDto: MemberDto): Member
+    fun findMemberByEmail(email: String): Member
 }
