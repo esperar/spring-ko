@@ -8,7 +8,9 @@ import esperer.kopring.domain.auth.util.AccountValidator
 import esperer.kopring.domain.member.domain.repo.MemberRepository
 import esperer.kopring.domain.member.exception.MemberNotFoundException
 import org.springframework.security.crypto.password.PasswordEncoder
+import org.springframework.stereotype.Component
 
+@Component
 class AccountValidatorImpl(
     private val memberRepository: MemberRepository,
     private val passwordEncoder: PasswordEncoder
