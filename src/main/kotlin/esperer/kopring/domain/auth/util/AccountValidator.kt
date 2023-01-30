@@ -5,5 +5,6 @@ import esperer.kopring.domain.auth.presentation.data.type.ValidatorType
 
 interface AccountValidator {
 
-    fun validate(validatorType: ValidatorType, dto: MemberDto)
+    fun validateSignUp(dto: MemberDto)
+    fun validateLogin(email: String, password: String)
 }

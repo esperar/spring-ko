@@ -16,20 +16,14 @@ class AccountValidatorImpl(
     private val passwordEncoder: PasswordEncoder
 ): AccountValidator {
 
-    override fun validate(validatorType: ValidatorType, dto: MemberDto) {
-        when (validatorType) {
-            ValidatorType.SIGNUP -> validatorSignUpEmail(dto.email)
-            ValidatorType.LOGIN -> validatorLoginInfo(dto.email, dto.password)
-        }
-    }
-
-    private fun validatorSignUpEmail(email: String) {
-        if (memberRepository.existsByEmail(email)) {
+    override fun validateSignUp(dto: MemberDto) {
+        if (memberRepository.existsByEmail(dto.email)) {
             throw DuplicateEmailException()
         }
     }
 
-    private fun validatorLoginInfo(email: String, password: String) {
+
+    override fun validateLogin(email: String, password: String) {
         memberRepository.findByEmail(email).let {
             it ?: throw MemberNotFoundException()
         }.let {

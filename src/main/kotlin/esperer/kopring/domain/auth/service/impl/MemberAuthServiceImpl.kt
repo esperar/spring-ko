@@ -18,8 +18,9 @@ class MemberAuthServiceImpl(
 ): MemberAuthService {
 
     override fun signUp(memberDto: MemberDto) {
-        accountValidator.validate(ValidatorType.SIGNUP,memberDto)
+        accountValidator.validateSignUp(memberDto)
             .let { accountConverter.toEntity(memberDto, passwordEncoder.encode(memberDto.password)) }
             .let { memberRepository.save(it) }
     }
+
 }
