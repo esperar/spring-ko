@@ -21,7 +21,7 @@ class AuthController(
     @PostMapping
     fun signUp(@RequestBody @Valid request: SignUpRequest) : ResponseEntity<Void> =
         accountConverter.toDto(request)
-            .let { memberSignUpService.signUp(it) }
+            .let { memberSignUpService.execute(it) }
             .let { ResponseEntity.status(HttpStatus.CREATED).build() }
 
 }
