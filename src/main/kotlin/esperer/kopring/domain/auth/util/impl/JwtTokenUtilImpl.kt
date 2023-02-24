@@ -5,7 +5,9 @@ import esperer.kopring.domain.auth.util.JwtTokenUtil
 import esperer.kopring.domain.member.domain.repo.MemberRepository
 import esperer.kopring.domain.member.exception.MemberNotFoundException
 import esperer.kopring.global.security.jwt.JwtTokenProvider
+import org.springframework.stereotype.Component
 
+@Component
 class JwtTokenUtilImpl(
     private val jwtTokenProvider: JwtTokenProvider,
     private val memberRepository: MemberRepository
