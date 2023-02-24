@@ -28,7 +28,7 @@ class AuthController(
             .let { memberSignUpService.execute(it) }
             .let { ResponseEntity.status(HttpStatus.CREATED).build() }
 
-    @PostMapping("login")
+    @PostMapping("/login")
     fun login(@RequestBody @Valid request: LoginRequest): ResponseEntity<TokenResponse> =
         accountConverter.toDto(request)
             .let { memberLoginService.execute(it) }
