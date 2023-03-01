@@ -4,6 +4,7 @@ import esperer.kopring.domain.post.presentation.dto.request.CreatePostRequest
 import esperer.kopring.domain.post.presentation.dto.response.PostDetailResponse
 import esperer.kopring.domain.post.presentation.dto.response.PostResponse
 import esperer.kopring.domain.post.service.CreatePostService
+import esperer.kopring.domain.post.service.GetAllPostService
 import esperer.kopring.domain.post.service.GetPostService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -20,7 +21,8 @@ import javax.validation.Valid
 @RequestMapping("/post")
 class PostController(
     private val createPostService: CreatePostService,
-    private val getPostService: GetPostService
+    private val getPostService: GetPostService,
+    private val getAllPostService: GetAllPostService
 ) {
 
     @PostMapping
@@ -33,5 +35,9 @@ class PostController(
         getPostService.execute(id)
             .let { ResponseEntity.ok(it) }
 
+    @GetMapping
+    fun getAllPost(): ResponseEntity<List<PostResponse>> =
+        getAllPostService.execute()
+            .let { ResponseEntity.ok(it) }
 
 }
