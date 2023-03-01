@@ -4,12 +4,10 @@ import esperer.kopring.domain.post.presentation.dto.request.CreatePostRequest
 import esperer.kopring.domain.post.presentation.dto.request.UpdatePostRequest
 import esperer.kopring.domain.post.presentation.dto.response.PostDetailResponse
 import esperer.kopring.domain.post.presentation.dto.response.PostResponse
-import esperer.kopring.domain.post.service.CreatePostService
-import esperer.kopring.domain.post.service.GetAllPostService
-import esperer.kopring.domain.post.service.GetPostService
-import esperer.kopring.domain.post.service.UpdatePostService
+import esperer.kopring.domain.post.service.*
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -26,7 +24,8 @@ class PostController(
     private val createPostService: CreatePostService,
     private val getPostService: GetPostService,
     private val getAllPostService: GetAllPostService,
-    private val updatePostService: UpdatePostService
+    private val updatePostService: UpdatePostService,
+    private val deletePostService: DeletePostService
 ) {
 
     @PostMapping
@@ -50,4 +49,8 @@ class PostController(
             .let { ResponseEntity.noContent().build() }
 
 
+    @DeleteMapping("/{id}")
+    fun deletePost(@PathVariable id: Long): ResponseEntity<Void> =
+        deletePostService.execute(id)
+            .let { ResponseEntity.ok().build() }
 }
