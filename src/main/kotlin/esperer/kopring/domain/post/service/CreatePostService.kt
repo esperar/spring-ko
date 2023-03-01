@@ -11,7 +11,7 @@ class CreatePostService(
     private val memberUtil: MemberUtil
 ) {
 
-    fun execute(createPostRequest: CreatePostRequest) =
+    fun execute(createPostRequest: CreatePostRequest): Long =
         memberUtil.currentMember()
-            .let { postRepository.save(createPostRequest.toEntity(it)) }
+            .let { postRepository.save(createPostRequest.toEntity(it)).id }
 }
