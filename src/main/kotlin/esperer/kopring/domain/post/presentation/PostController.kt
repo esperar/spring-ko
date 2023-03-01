@@ -1,6 +1,6 @@
 package esperer.kopring.domain.post.presentation
 
-import esperer.kopring.domain.post.presentation.dto.CreatePostRequest
+import esperer.kopring.domain.post.presentation.dto.request.CreatePostRequest
 import esperer.kopring.domain.post.service.CreatePostService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

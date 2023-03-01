@@ -1,4 +1,4 @@
-package esperer.kopring.domain.post.presentation.dto
+package esperer.kopring.domain.post.presentation.dto.request
 
 import esperer.kopring.domain.member.domain.Member
 import esperer.kopring.domain.post.domain.Post
