@@ -1,6 +1,7 @@
 package esperer.kopring.domain.post.presentation
 
 import esperer.kopring.domain.post.presentation.dto.request.CreatePostRequest
+import esperer.kopring.domain.post.presentation.dto.response.PostDetailResponse
 import esperer.kopring.domain.post.presentation.dto.response.PostResponse
 import esperer.kopring.domain.post.service.CreatePostService
 import esperer.kopring.domain.post.service.GetPostService
@@ -28,7 +29,7 @@ class PostController(
             .let { ResponseEntity.status(HttpStatus.CREATED).body(it) }
 
     @GetMapping("{id}")
-    fun getPostById(@PathVariable id: Long): ResponseEntity<PostResponse> =
+    fun getPostById(@PathVariable id: Long): ResponseEntity<PostDetailResponse> =
         getPostService.execute(id)
             .let { ResponseEntity.ok(it) }
 
