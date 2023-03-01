@@ -27,7 +27,7 @@ def register_presentation(domain: str, api_name: str, method: str, path: str, ha
         req_str = f'''
 data class {api_name.capitalize()}RequestDto()
 '''
-        write_file_at(f'src/main/kotlin/com/msg/gauth/domain/{domain}/presentation/dto/request/{api_name.capitalize()}RequestDto.kt', req_str)
+        write_file_at(f'src/main/esperer/kopring/domain/{domain}/presentation/dto/request/{api_name.capitalize()}RequestDto.kt', req_str)
 
     response_str = 'ResponseEntity<Void>'
     if has_response:
@@ -35,7 +35,7 @@ data class {api_name.capitalize()}RequestDto()
         res_str = f'''
 data class {api_name.capitalize()}ResponseDto()
 '''
-        write_file_at(f'src/main/kotlin/com/msg/gauth/domain/{domain}/presentation/dto/response/{api_name.capitalize()}ResponseDto.kt', res_str)
+        write_file_at(f'src/main/esperer/kopring/domain/{domain}/presentation/dto/response/{api_name.capitalize()}ResponseDto.kt', res_str)
 
     controller_content = f"""    {method_str}
     fun {api_name[0].lower() + api_name[1:]}({param_str}): {response_str} {'{'}
@@ -43,7 +43,7 @@ data class {api_name.capitalize()}ResponseDto()
     {'}'}
 
 """
-    update_file_at(f'src/main/kotlin/com/msg/gauth/domain/{domain}/presentation/{domain.capitalize()}Controller.kt', find=') {', insert=controller_content)
+    update_file_at(f'src/main/esperer/kopring/domain/{domain}/presentation/{domain.capitalize()}Controller.kt', find=') {', insert=controller_content)
 
 def register_service(domain: str, api_name: str, has_request: bool, has_response: bool):
     param_str = ''
@@ -62,7 +62,7 @@ class {api_name.capitalize()}Service(
     {'}'}
 {'}'}
 """
-    write_file_at(f'src/main/kotlin/com/msg/gauth/domain/{domain}/services/{domain.capitalize()}Service.kt', service_content)
+    write_file_at(f'src/main/kotlin/esperer/kopring/domain/{domain}/service/{domain.capitalize()}Service.kt', service_content)
 
 def read_file_at(file_path: str):
     with open(file_path, 'r') as file:
