@@ -56,8 +56,11 @@ class SecurityConfig(
             // Admin
             .mvcMatchers("/admin/**").hasRole("ADMIN")
 
-            //User
+            // User
             .mvcMatchers("/user/**").authenticated()
+
+            // Post
+            .mvcMatchers(HttpMethod.POST,"/post").authenticated()
 
             .anyRequest().permitAll()
             .and()
