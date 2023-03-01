@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface PostRepository : JpaRepository<Post, Long> {
     fun findByIdAndMember(id: Long, member: Member): Post?
+    fun deleteByIdAndMember(id: Long, member: Member)
 }
