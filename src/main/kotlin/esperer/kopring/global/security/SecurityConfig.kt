@@ -60,7 +60,7 @@ class SecurityConfig(
             .mvcMatchers("/user/**").authenticated()
 
             // Post
-            .mvcMatchers(HttpMethod.POST,"/post").authenticated()
+            .mvcMatchers(HttpMethod.POST,"/post/**").authenticated()
             .mvcMatchers(HttpMethod.GET, "/post/**").authenticated()
             .mvcMatchers(HttpMethod.PATCH, "/post/**").authenticated()
             .mvcMatchers(HttpMethod.DELETE, "post/**").authenticated()
