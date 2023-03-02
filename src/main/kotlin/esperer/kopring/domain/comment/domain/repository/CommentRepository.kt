@@ -5,5 +5,5 @@ import esperer.kopring.domain.post.domain.Post
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface CommentRepository : JpaRepository<Comment, Long> {
-    fun findByPost(post: Post): Comment?
+    fun findAllByPost(post: Post): List<Comment>
 }

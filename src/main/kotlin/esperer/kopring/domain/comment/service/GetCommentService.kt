@@ -16,10 +16,10 @@ class GetCommentService(
     private val commentConverter: CommentConverter
     ) {
 
-    fun execute(postId: Long): CommentResponse =
+    fun execute(postId: Long): List<CommentResponse> =
         postRepository.findByIdOrNull(postId)
             .let { it ?: throw PostNotFoundException() }
-            .let { commentRepository.findByPost(it) }
-            .let { it ?: throw CommentNotFoundException() }
-            .let { commentConverter.toCommentResponse(it)}
+            .let { commentRepository.findAllByPost(it) }
+            .map { commentConverter.toCommentResponse(it) }
+
 }
