@@ -1,5 +1,6 @@
 package esperer.kopring.domain.comment.domain
 
+import esperer.kopring.domain.comment.presentation.dto.request.UpdateCommentRequest
 import esperer.kopring.domain.member.domain.Member
 import esperer.kopring.domain.post.domain.Post
 import esperer.kopring.global.entity.BaseIdEntity
@@ -19,4 +20,14 @@ class Comment(
     @JoinColumn(name = "post_id")
     val post: Post
 ) : BaseIdEntity(){
+
+    fun update(updateCommentRequest: UpdateCommentRequest): Comment {
+        val comment = Comment(
+            updateCommentRequest.content,
+            member,
+            post)
+
+        comment.id = this.id
+        return comment
+    }
 }
