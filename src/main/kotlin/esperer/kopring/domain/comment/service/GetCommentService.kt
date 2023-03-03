@@ -2,7 +2,6 @@ package esperer.kopring.domain.comment.service
 
 import esperer.kopring.domain.comment.converter.CommentConverter
 import esperer.kopring.domain.comment.domain.repository.CommentRepository
-import esperer.kopring.domain.comment.exception.CommentNotFoundException
 import esperer.kopring.domain.comment.presentation.dto.response.CommentResponse
 import esperer.kopring.domain.post.domain.repository.PostRepository
 import esperer.kopring.domain.post.exception.PostNotFoundException
