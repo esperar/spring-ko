@@ -64,6 +64,7 @@ class SecurityConfig(
             .mvcMatchers(HttpMethod.GET, "/post/**").authenticated()
             .mvcMatchers(HttpMethod.PATCH, "/post/**").authenticated()
             .mvcMatchers(HttpMethod.DELETE, "/post/**").authenticated()
+            .mvcMatchers(HttpMethod.DELETE, "/post/**/delete-post").hasAuthority("ADMIN")
 
              // Comment
             .mvcMatchers("/comment/**").authenticated()
