@@ -6,7 +6,7 @@ import esperer.kopring.global.annotation.TransactionalService
 import org.springframework.data.repository.findByIdOrNull
 
 @TransactionalService
-class DeletePostService(
+class AdminDeletePostService(
     private val postRepository: PostRepository
 ) {
 
