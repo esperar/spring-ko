@@ -1,5 +1,6 @@
 package esperer.kopring.domain.post.presentation
 
+import esperer.kopring.domain.admin.service.AdminDeletePostService
 import esperer.kopring.domain.post.presentation.dto.request.CreatePostRequest
 import esperer.kopring.domain.post.presentation.dto.request.UpdatePostRequest
 import esperer.kopring.domain.post.presentation.dto.response.PostDetailResponse
@@ -25,7 +26,8 @@ class PostController(
     private val getPostService: GetPostService,
     private val getAllPostService: GetAllPostService,
     private val updatePostService: UpdatePostService,
-    private val deletePostService: DeletePostService
+    private val deletePostService: DeletePostService,
+    private val adminDeletePostService: AdminDeletePostService
 ) {
 
     @PostMapping
@@ -53,4 +55,10 @@ class PostController(
     fun deletePost(@PathVariable id: Long): ResponseEntity<Void> =
         deletePostService.execute(id)
             .let { ResponseEntity.ok().build() }
+
+    @DeleteMapping("/{id}/delete-post")
+    fun adminDeletePost(@PathVariable id: Long): ResponseEntity<Void> =
+        adminDeletePostService.execute(id)
+            .let { ResponseEntity.ok().build() }
+
 }
