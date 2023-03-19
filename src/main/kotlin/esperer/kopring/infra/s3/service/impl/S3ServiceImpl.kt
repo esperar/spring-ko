@@ -4,7 +4,6 @@ import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.CannedAccessControlList
 import com.amazonaws.services.s3.model.ObjectMetadata
 import com.amazonaws.services.s3.model.PutObjectRequest
-import com.fasterxml.jackson.databind.ObjectMapper
 import esperer.kopring.infra.s3.config.S3BucketProperties
 import esperer.kopring.infra.s3.service.S3Service
 import org.springframework.web.multipart.MultipartFile
