@@ -37,6 +37,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
 	implementation ("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
+
+
 }
 
 tasks.withType<KotlinCompile> {
