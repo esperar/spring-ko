@@ -2,6 +2,7 @@ package esperer.kopring.infra.s3.service.impl
 
 import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.CannedAccessControlList
+import com.amazonaws.services.s3.model.DeleteObjectRequest
 import com.amazonaws.services.s3.model.ObjectMetadata
 import com.amazonaws.services.s3.model.PutObjectRequest
 import esperer.kopring.infra.s3.config.S3BucketProperties
@@ -32,7 +33,9 @@ class S3ServiceImpl(
     }
 
     override fun deleteFile(fileName: String) {
-        TODO("Not yet implemented")
+        amazonS3.deleteObject(
+            DeleteObjectRequest(s3BucketProperties.bucket, fileName)
+        )
     }
 
     fun createFileName(fileName: String): String {
