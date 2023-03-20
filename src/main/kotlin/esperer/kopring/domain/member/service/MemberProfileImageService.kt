@@ -1,4 +1,4 @@
-package esperer.kopring.domain.auth.service
+package esperer.kopring.domain.member.service
 
 import esperer.kopring.domain.auth.presentation.data.dto.MemberDto
 
