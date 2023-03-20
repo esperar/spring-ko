@@ -7,9 +7,11 @@ import com.amazonaws.services.s3.model.ObjectMetadata
 import com.amazonaws.services.s3.model.PutObjectRequest
 import esperer.kopring.infra.s3.config.S3BucketProperties
 import esperer.kopring.infra.s3.service.S3Service
+import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
 
+@Service
 class S3ServiceImpl(
     private val amazonS3: AmazonS3,
     private val s3BucketProperties: S3BucketProperties
