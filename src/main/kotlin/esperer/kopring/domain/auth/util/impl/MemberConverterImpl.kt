@@ -3,7 +3,7 @@ package esperer.kopring.domain.auth.util.impl
 import esperer.kopring.domain.auth.presentation.data.dto.MemberDto
 import esperer.kopring.domain.auth.presentation.data.request.LoginRequest
 import esperer.kopring.domain.auth.presentation.data.request.SignUpRequest
-import esperer.kopring.domain.auth.util.AccountConverter
+import esperer.kopring.domain.auth.util.MemberConverter
 import esperer.kopring.domain.member.domain.Member
 import esperer.kopring.domain.member.type.Role
 import esperer.kopring.domain.member.type.UserStatus
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class AccountConverterImpl: AccountConverter {
+class MemberConverterImpl: MemberConverter {
 
     override fun toDto(request: SignUpRequest) =
         MemberDto(-1, request.email, request.password, request.name, null)
