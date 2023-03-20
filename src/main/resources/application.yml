@@ -19,6 +19,24 @@ spring:
         format_sql: 'true'
     database-platform: org.hibernate.dialect.MariaDB103Dialect
 
+servlet:
+  multipart:
+    file-size-threshold: 1MB
+    max-file-size: 100MB
+    max-request-size: 100MB
+
 jwt:
   accessSecret: ${ACCESS_SECRET}
   refreshSecret: ${REFRESH_SECRET}
+
+cloud:
+  aws:
+    credentials:
+      accessKey: ${AWS_ACCESS}
+      secretKey: ${AWS_SECRET}
+    s3:
+       bucket: ${AWS_BUCKET}
+    region:
+       static: ap-northeast-2
+    stack:
+       auto: false

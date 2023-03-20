@@ -1,5 +1,6 @@
 package esperer.kopring.domain.member.domain
 
+import esperer.kopring.domain.auth.presentation.data.dto.MemberDto
 import esperer.kopring.domain.member.type.Role
 import esperer.kopring.domain.member.type.UserStatus
 import javax.persistence.*
@@ -27,5 +28,9 @@ class Member(
     @Enumerated(EnumType.STRING)
     val state: UserStatus,
 ) {
+    fun updateMemberProfileImage(imageUrl: String): Member{
+        this.imageUrl = "https://devlog-v2-bucket.s3.ap-northeast-2.amazonaws.com/USER/".plus(imageUrl)
+        return this
+    }
 
 }

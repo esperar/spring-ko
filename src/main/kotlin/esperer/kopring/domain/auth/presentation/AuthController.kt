@@ -5,9 +5,10 @@ import esperer.kopring.domain.auth.presentation.data.request.SignUpRequest
 import esperer.kopring.domain.auth.presentation.data.response.TokenResponse
 import esperer.kopring.domain.auth.service.MemberLoginService
 import esperer.kopring.domain.auth.service.MemberSignUpService
-import esperer.kopring.domain.auth.util.AccountConverter
+import esperer.kopring.domain.auth.util.MemberConverter
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -19,7 +20,7 @@ import javax.validation.Valid
 class AuthController(
     private val memberSignUpService: MemberSignUpService,
     private val memberLoginService: MemberLoginService,
-    private val accountConverter: AccountConverter
+    private val accountConverter: MemberConverter
 ) {
 
     @PostMapping

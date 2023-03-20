@@ -4,17 +4,17 @@ import esperer.kopring.domain.auth.exception.DuplicateEmailException
 import esperer.kopring.domain.auth.exception.PasswordNotCorrectException
 import esperer.kopring.domain.auth.presentation.data.dto.MemberDto
 import esperer.kopring.domain.auth.presentation.data.type.ValidatorType
-import esperer.kopring.domain.auth.util.AccountValidator
+import esperer.kopring.domain.auth.util.MemberValidator
 import esperer.kopring.domain.member.domain.repo.MemberRepository
 import esperer.kopring.domain.member.exception.MemberNotFoundException
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 
 @Component
-class AccountValidatorImpl(
+class MemberValidatorImpl(
     private val memberRepository: MemberRepository,
     private val passwordEncoder: PasswordEncoder
-): AccountValidator {
+): MemberValidator {
 
     private fun validateSignUp(dto: MemberDto) {
         if (memberRepository.existsByEmail(dto.email)) {
