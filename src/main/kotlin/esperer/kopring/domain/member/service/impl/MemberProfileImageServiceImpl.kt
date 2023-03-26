@@ -5,7 +5,7 @@ import esperer.kopring.domain.member.service.MemberProfileImageService
 import esperer.kopring.domain.auth.util.MemberUtil
 import esperer.kopring.domain.member.domain.repo.MemberRepository
 import esperer.kopring.global.annotation.TransactionalService
-import esperer.kopring.infra.s3.service.S3Service
+import esperer.kopring.global.aws.s3.service.S3Service
 
 @TransactionalService
 class MemberProfileImageServiceImpl(

@@ -1,4 +1,4 @@
-package esperer.kopring.infra.s3.config
+package esperer.kopring.global.aws.s3.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding

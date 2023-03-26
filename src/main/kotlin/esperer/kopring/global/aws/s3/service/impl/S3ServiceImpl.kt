@@ -1,12 +1,12 @@
-package esperer.kopring.infra.s3.service.impl
+package esperer.kopring.global.aws.s3.service.impl
 
 import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.CannedAccessControlList
 import com.amazonaws.services.s3.model.DeleteObjectRequest
 import com.amazonaws.services.s3.model.ObjectMetadata
 import com.amazonaws.services.s3.model.PutObjectRequest
-import esperer.kopring.infra.s3.config.S3BucketProperties
-import esperer.kopring.infra.s3.service.S3Service
+import esperer.kopring.global.aws.s3.config.S3BucketProperties
+import esperer.kopring.global.aws.s3.service.S3Service
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
