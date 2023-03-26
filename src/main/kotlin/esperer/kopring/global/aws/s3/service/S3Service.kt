@@ -1,4 +1,4 @@
-package esperer.kopring.infra.s3.service
+package esperer.kopring.global.aws.s3.service
 
 import org.springframework.web.multipart.MultipartFile
 
